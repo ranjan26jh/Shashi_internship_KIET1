@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+</head>
+<body>
+
+  <script>
+    function data(){
+      var a=document.getElementById("n1").value;
+      var b=document.getElementById("n2").value;
+      var c=document.getElementById("n3").value;
+      var d=document.getElementById("n4").value;
+
+      if(a==""||b==""||c==""||d==""){
+        alert("All field are mendatory");
+        return false;
+      }
+      else if(b.length>10 ||b.length<10){
+        alert("no. should be of 10 digit")
+        return false;
+      }
+      else if(isNaN(b)){
+        alert("only nuber is allowed")
+        return false;
+      }
+      else if(c!=d){
+        alert("pass should be same")
+        return false;
+      }
+      else{
+        true;
+      }
+    }
+  </script>
+  
+  <form onsubmit=" return data()" action="abc.html">
+   User Id:          <input type="text" id="n1"><br><br>   
+   Conatact:         <input type="text" id="n2"><br><br>
+   Password:         <input type="text" id="n3"><br><br>
+   Confirm Password: <input type="text" id="n4"><br><br>
+
+   <input type="submit" value="submit Your Data">
+  </form>
+</body>
+</html>
